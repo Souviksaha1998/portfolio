@@ -1,0 +1,555 @@
+/* ============================================
+   NeuralPortfolio - Premium Effects Stylesheet
+   Advanced animations and visual enhancements
+   ============================================ */
+
+/* ============================================
+   Animated Grid Background
+   ============================================ */
+.grid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(108, 92, 231, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108, 92, 231, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.grid-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, var(--bg-primary) 70%);
+}
+
+/* ============================================
+   Floating Orbs / Particles
+   ============================================ */
+.floating-orbs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    animation: float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--accent-primary);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--accent-tertiary);
+    top: 60%;
+    right: 10%;
+    animation-delay: -5s;
+}
+
+.orb-3 {
+    width: 250px;
+    height: 250px;
+    background: var(--accent-secondary);
+    bottom: 10%;
+    left: 30%;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+
+    50% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+
+    75% {
+        transform: translate(20px, 30px) scale(1.05);
+    }
+}
+
+/* ============================================
+   Glassmorphism Cards (Enhanced)
+   ============================================ */
+.card {
+    background: rgba(20, 20, 35, 0.6) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.05),
+            transparent);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.card:hover::after {
+    left: 100%;
+}
+
+.card:hover {
+    border-color: rgba(108, 92, 231, 0.5) !important;
+    box-shadow:
+        0 15px 50px rgba(108, 92, 231, 0.2),
+        0 0 30px rgba(108, 92, 231, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   Neon Text Glow Effects
+   ============================================ */
+.hero-name {
+    text-shadow:
+        0 0 20px rgba(108, 92, 231, 0.5),
+        0 0 40px rgba(108, 92, 231, 0.3),
+        0 0 60px rgba(108, 92, 231, 0.2);
+    animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    from {
+        filter: brightness(1);
+    }
+
+    to {
+        filter: brightness(1.2);
+    }
+}
+
+.section-title {
+    text-shadow: 0 0 30px rgba(108, 92, 231, 0.3);
+}
+
+/* ============================================
+   Enhanced Profile Image
+   ============================================ */
+.profile-container {
+    perspective: 1000px;
+}
+
+.profile-container::before {
+    content: '';
+    position: absolute;
+    inset: -30px;
+    background: conic-gradient(from 0deg,
+            var(--accent-primary),
+            var(--accent-tertiary),
+            var(--accent-secondary),
+            var(--accent-primary));
+    border-radius: 50%;
+    animation: rotate 6s linear infinite;
+    filter: blur(15px);
+    opacity: 0.6;
+}
+
+.profile-image {
+    transition: transform 0.5s ease;
+}
+
+.profile-container:hover .profile-image {
+    transform: scale(1.02);
+}
+
+/* ============================================
+   Animated Buttons
+   ============================================ */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    transition: 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-secondary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(108, 92, 231, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-secondary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ============================================
+   Timeline Enhancements
+   ============================================ */
+.timeline::before {
+    background: linear-gradient(180deg,
+            transparent,
+            var(--accent-primary) 10%,
+            var(--accent-tertiary) 90%,
+            transparent) !important;
+    width: 3px !important;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.timeline-dot {
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    50% {
+        box-shadow: 0 0 40px var(--accent-glow), 0 0 60px var(--accent-glow);
+    }
+}
+
+/* ============================================
+   Skill Progress Bar Enhancements
+   ============================================ */
+.skill-bar {
+    background: rgba(255, 255, 255, 0.05) !important;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.skill-progress {
+    background: linear-gradient(90deg,
+            var(--accent-primary),
+            var(--accent-secondary),
+            var(--accent-tertiary)) !important;
+    background-size: 200% 100%;
+    animation: progressGlow 2s ease infinite;
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+@keyframes progressGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ============================================
+   Enhanced Skill Tags
+   ============================================ */
+.skill-tag {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(108, 92, 231, 0.3),
+            transparent);
+    transition: 0.5s;
+}
+
+.skill-tag:hover::before {
+    left: 100%;
+}
+
+.skill-tag:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.3);
+}
+
+/* ============================================
+   Project Card Enhancements
+   ============================================ */
+.project-image {
+    transition: all 0.5s ease;
+    filter: saturate(0.8);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+    filter: saturate(1.2);
+}
+
+.tech-badge {
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: rgba(6, 182, 212, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(6, 182, 212, 0.3);
+}
+
+/* ============================================
+   Navbar Glass Effect
+   ============================================ */
+.navbar {
+    background: rgba(10, 10, 15, 0.7) !important;
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    text-shadow: 0 0 20px var(--accent-glow);
+    transform: scale(1.05);
+}
+
+/* ============================================
+   Nav Link Hover Effects
+   ============================================ */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* ============================================
+   Contact Form Enhancements
+   ============================================ */
+.contact-form {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(20, 20, 35, 0.6) !important;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: var(--accent-primary) !important;
+    box-shadow:
+        0 0 0 3px rgba(108, 92, 231, 0.2),
+        0 0 20px rgba(108, 92, 231, 0.1);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================
+   Social Links Enhancements
+   ============================================ */
+.social-link {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-link:hover::before {
+    opacity: 1;
+}
+
+.social-link:hover {
+    transform: translateY(-5px) rotate(5deg);
+    box-shadow:
+        0 15px 35px rgba(108, 92, 231, 0.4),
+        0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-link svg {
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
+   Footer Enhancements
+   ============================================ */
+.footer {
+    background: rgba(10, 10, 15, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* ============================================
+   Staggered Fade In Animation
+   ============================================ */
+.fade-in {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.fade-in:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.fade-in:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.fade-in:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.fade-in:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.fade-in:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.fade-in:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+/* ============================================
+   Cursor Glow Effect (Optional)
+   ============================================ */
+.cursor-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle,
+            rgba(108, 92, 231, 0.15) 0%,
+            transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+    mix-blend-mode: screen;
+}
+
+/* ============================================
+   Scanline Effect (Subtle)
+   ============================================ */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0.03) 0px,
+            rgba(0, 0, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 2px);
+    pointer-events: none;
+    z-index: 9998;
+}
+
+/* ============================================
+   Section Divider Glow
+   ============================================ */
+.section-title::after {
+    box-shadow: 0 0 20px var(--accent-glow);
+    animation: underlineGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes underlineGlow {
+    from {
+        box-shadow: 0 0 10px var(--accent-glow);
+        width: 60px;
+    }
+
+    to {
+        box-shadow: 0 0 30px var(--accent-glow);
+        width: 80px;
+    }
+}
