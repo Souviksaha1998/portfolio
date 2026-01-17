@@ -114,7 +114,7 @@ const portfolioData = {
 
     // CONTACT
     contact: {
-        email: "souvik.saha@example.com",
+        email: "ssouvik.191@gmail.com",
         phone: "+1 (555) 123-4567",
         location: "San Francisco, California",
         social: {
