@@ -10,7 +10,7 @@ const portfolioData = {
         bio: "Passionate about building intelligent systems. I specialize in computer vision, NLP, and deploying ML models at scale.",
         photo: "assets\\souvik.jpg",
         resumeLink: "#",
-        email: "souvik.saha@example.com"
+        email: "ssouvik.191@gmail.com"
     },
 
     // EDUCATION

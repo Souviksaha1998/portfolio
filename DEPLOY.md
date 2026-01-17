@@ -45,3 +45,4 @@ git push -u origin main
 ## 5. You're Live! 🚀
 Wait about 1-2 minutes. Your site will be published at:
 `https://<YOUR_USERNAME>.github.io/<REPO_NAME>/`
+`https://souviksaha1998.github.io/portfolio/`
